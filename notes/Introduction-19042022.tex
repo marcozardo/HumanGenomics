@@ -1,0 +1,127 @@
+\section{Exam information}
+Exam dates: June $16^{th}$, July $13^{th}$, September $5^{th}$
+
+papers are mandatory in part, those higlighted in blu
+
+\section{Introduction}
+% lesson taken in 19/04/2022
+
+Genetics is the study of heredity, from parents (Mendel), very specific limited amount of genes. related to deseases, deals with evolutionary
+Genomics is the study of the whole DNA content of an organism. try to interpret changes as a whole. 
+
+WHO: study of genes, function, and related techniques. Developing algorithms is part of the process.
+
+computational biology for 3D protein protein interaction, characterization of 3D chromatic struture. 
+
+
+Genetic Make-Up
+
+genome of different people different for 1\% of the bases. Copy number variants, genes present in different copies. loss of DNA can generate hemyzigote loss or bivalent loss. The two parameters make us different
+
+genetic variance partially inherited,
+contributes to predisposition to certain diseases. 
+very rare traits 
+common variants could be associated to susceptibility, but penetrance is really low. 
+
+Rare uncommon variants
+
+ADME genes, determine pharmacokinetic variability of many compounds, influencing the patient response to treatment.
+* Precision medicine: takes into consideration genetics and genomics of the disease cell, to choose the treatment or the dosage 
+
+somatic variance is part of the genome, it is accumulated over time. not inherited, acquired because of aging, radiation, exposure to toxic substances.
+multiple types:
+\begin{itemize}
+	\item SNV: somatic changes of single nucleotides, only on a restricted number of cells
+	\item Indels: involve a few nucleotides
+	\item Rearrangements: translocation, inversion, chromotripsy, 
+	\item Somatic copy number aberrations: changes copy number of a part of a genome.	 
+\end{itemize}
+
+translocation can be balanced or unbalanced. inversion involves the exchange of the same amount of the DNA.
+Duplications and deletions modify the amount of DNA. Duplication can involve different chromosomes. Have to consider the break points on the side of the sequences.
+
+\textbf{chromoplexy}: a class of complex somatic DNA rearrangements whereby abundant DNA deletions and intra and inter chromosomal translpcaions that have originated in an interdependent way occur wihtin a single cel cycle.
+
+\textbf{chromothripsis}: a clustered chromosomal rearrangement in confined genomic regions that results from a single catastrophic event, usually limited to one chromosome.
+
+chromoplexy and chromothripsis are both considered extreme events
+
+\textbf{Kataegis}: A phenomenon that is characterized by large clusters of mutations (hypermutation) in the genome of cancer cells. an APOVEC family enzyme might be responsible for the kataegis process. 
+
+
+
+\textbf{clonality}: cell with a variant doesn't correct it and so the variant will be inherited by the child cells. Find a way to measure clonality of every event, find subclonality. real evolutions in human is done in this way. in the study of tumors it is done the same thing.
+
+
+\subsection{experimental techinques to detect variants/aberratioins prior to NGS}
+cariotyping was done, label with different dyes. possible to see the length of the chromosomes. not easy to obtain the precise sequence. 
+
+nGS revolutionized it, 
+
+processing flow:
+from disease cells, samples of bloods. DNA is isolated and fragmented, gene specific baits are then used. fragments can be obtained with physical or chemical reactions. After the hybridization. Fragments can be taken with beads, after elution all the parts can be sequenced
+
+when studying SNPs from somatic mutations it is needed a auto reference, blood is taken, with the same procedure they are taken the fragments. In that way it is possible to say what mutatinos are somatic and what aren't
+
+it is possible to study tumors by using really frequent point mutations. In that way you avoid doing also the sequence
+
+match normal to correct copy number variants
+
+distinguish 
+somatic from germal indels
+homozygote deletions 
+
+sequence deep tumors: 
+when searching for subclonalities, presence of normal DNA that we will not be able to differentiate.
+
+single end sequencing approach --> take only one part of the molecule, of the length depending on the sequencing machine used. lost a lot of information
+
+paired  end sequencing approach 
+sequence the terminals, check if the relative distance is the expected distance. you can use each en a a sequencing read
+
+point mutations can be detected through single pair reads, double pair reads can give you double the coverage.
+disadvantege is that you don't know the the sequence of the inserted regions. 
+Homozygous deletins can be seen because of copy number alterations, viewable in terms of coverage. Hemizygous deletions give you the half of the total possible coverage. single and paired end can be used equivalently
+If you have a translocations instead can be seen especially with double paired end, finding consequently parts of different chromosomes, what end related to which chromosome.
+
+
+Local coverage counted on the single base is the super local coverage. Allelic fraction is the proportion of reads that supports the reference base in $p_i$. sequencing errors depend on the machine, the techniques, is aroud $1/1000$, use algorithms to understand if allelic variants with low frequency depend on mutations, toward the ends or the middle. Quality computed for each base pair. 
+
+WHole genome sequencing coverage is computed as 
+$$ C = \frac{L * N}{G}$$
+Coverage is a parameter to set to understand how deep go. Observed coverage lower than the expected. %to understand better this part
+
+pair number of genes are really difficult to understand if they are due to polyploidy or other things. numeri dispari are instead detectable
+
+differnece between sequence coverage and physical coverage. looking to the three case. physical coverage. longer reads permit to have lower costs. physical coverage is always iportant for deltions and insertions, transpositions. point mutations in the middle cannot be properly detected. 
+
+
+
+
+---------------------------------
+
+SNPs do not need high coverage, just need enough allele representation
+
+not shared by a lot of cells
+raise coverage in the case of transcript thatis expressed at very low level.
+
+
+multigene region, the color code to show a gene ot the other
+lnCaP cell-line
+the coverage is on average about $600$, not homogeneously distributed, neither in the same gene
+Average coverage of each gene, understand significant differences.
+PTEN seems to be significantly lower in terms of coverage, could be a monoallelic deletion.
+
+OTHER IMAGE
+portion that is homozigously deleted, partial biallelic deletion
+
+THIRD IMAGE
+AR shows massive amplification
+
+
+it is possible to amplify the coverage combining the results of different runs
+problems of ILLUMINA involve repeated regions, can't be deduced the linearity of the genome through short reads. With very long reads (Nanopore) allow to sequence great molecules, find position of repeats.
+
+HUMAN REFERENCE GENOME
+reference genome including all the possible SNPs 
+find most common genotypes for all regions
