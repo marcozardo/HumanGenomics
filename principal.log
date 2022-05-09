@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.27)  9 MAY 2022 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.27)  9 MAY 2022 15:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,81 +756,81 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 62
  (C:\Users\elisa\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [3]
-<LD_plot.PNG, id=39, 412.54124pt x 260.47313pt>
-File: LD_plot.PNG Graphic file (type png)
-<use LD_plot.PNG>
-Package pdftex.def Info: LD_plot.PNG  used on input line 81.
+<Images/LD_plot.PNG, id=39, 412.54124pt x 260.47313pt>
+File: Images/LD_plot.PNG Graphic file (type png)
+<use Images/LD_plot.PNG>
+Package pdftex.def Info: Images/LD_plot.PNG  used on input line 81.
 (pdftex.def)             Requested size: 303.53267pt x 191.65013pt.
- [4 <./LD_plot.PNG>]
-<SNP_number.PNG, id=48, 493.845pt x 364.86313pt>
-File: SNP_number.PNG Graphic file (type png)
-<use SNP_number.PNG>
-Package pdftex.def Info: SNP_number.PNG  used on input line 116.
+ [4 <./Images/LD_plot.PNG>]
+<Images/SNP_number.PNG, id=48, 493.845pt x 364.86313pt>
+File: Images/SNP_number.PNG Graphic file (type png)
+<use Images/SNP_number.PNG>
+Package pdftex.def Info: Images/SNP_number.PNG  used on input line 116.
 (pdftex.def)             Requested size: 303.53267pt x 224.25308pt.
- [5 <./SNP_number.PNG>] [6]
-<Distance.PNG, id=66, 508.90125pt x 356.33125pt>
-File: Distance.PNG Graphic file (type png)
-<use Distance.PNG>
-Package pdftex.def Info: Distance.PNG  used on input line 171.
+ [5 <./Images/SNP_number.PNG>] [6]
+<Images/Distance.PNG, id=66, 508.90125pt x 356.33125pt>
+File: Images/Distance.PNG Graphic file (type png)
+<use Images/Distance.PNG>
+Package pdftex.def Info: Images/Distance.PNG  used on input line 171.
 (pdftex.def)             Requested size: 303.53267pt x 212.53897pt.
-<Distance2.PNG, id=67, 511.9125pt x 367.3725pt>
-File: Distance2.PNG Graphic file (type png)
-<use Distance2.PNG>
-Package pdftex.def Info: Distance2.PNG  used on input line 180.
+<Images/Distance2.PNG, id=67, 511.9125pt x 367.3725pt>
+File: Images/Distance2.PNG Graphic file (type png)
+<use Images/Distance2.PNG>
+Package pdftex.def Info: Images/Distance2.PNG  used on input line 180.
 (pdftex.def)             Requested size: 303.53267pt x 217.82977pt.
- [7 <./Distance.PNG>]
-<Distance3.PNG, id=77, 430.10687pt x 358.84062pt>
-File: Distance3.PNG Graphic file (type png)
-<use Distance3.PNG>
-Package pdftex.def Info: Distance3.PNG  used on input line 197.
+ [7 <./Images/Distance.PNG>]
+<Images/Distance3.PNG, id=77, 430.10687pt x 358.84062pt>
+File: Images/Distance3.PNG Graphic file (type png)
+<use Images/Distance3.PNG>
+Package pdftex.def Info: Images/Distance3.PNG  used on input line 197.
 (pdftex.def)             Requested size: 303.53267pt x 253.24548pt.
- [8 <./Distance2.PNG>]
-<Selected_SNP.PNG, id=85, 510.90875pt x 412.54124pt>
-File: Selected_SNP.PNG Graphic file (type png)
-<use Selected_SNP.PNG>
-Package pdftex.def Info: Selected_SNP.PNG  used on input line 228.
+ [8 <./Images/Distance2.PNG>]
+<Images/Selected_SNP.PNG, id=85, 510.90875pt x 412.54124pt>
+File: Images/Selected_SNP.PNG Graphic file (type png)
+<use Images/Selected_SNP.PNG>
+Package pdftex.def Info: Images/Selected_SNP.PNG  used on input line 228.
 (pdftex.def)             Requested size: 303.53267pt x 245.09055pt.
- [9 <./Distance3.PNG>] [10 <./Selected_SNP.PNG>]
-<Prob_test.PNG, id=105, 505.89pt x 352.81813pt>
-File: Prob_test.PNG Graphic file (type png)
-<use Prob_test.PNG>
-Package pdftex.def Info: Prob_test.PNG  used on input line 279.
+ [9 <./Images/Distance3.PNG>] [10 <./Images/Selected_SNP.PNG>]
+<Images/Prob_test.PNG, id=105, 505.89pt x 352.81813pt>
+File: Images/Prob_test.PNG Graphic file (type png)
+<use Images/Prob_test.PNG>
+Package pdftex.def Info: Images/Prob_test.PNG  used on input line 279.
 (pdftex.def)             Requested size: 303.53267pt x 211.6925pt.
- [11] [12 <./Prob_test.PNG>]
-<cell_lines_1.PNG, id=123, 430.60875pt x 248.93pt>
-File: cell_lines_1.PNG Graphic file (type png)
-<use cell_lines_1.PNG>
-Package pdftex.def Info: cell_lines_1.PNG  used on input line 329.
+ [11] [12 <./Images/Prob_test.PNG>]
+<Images/cell_lines_1.PNG, id=123, 430.60875pt x 248.93pt>
+File: Images/cell_lines_1.PNG Graphic file (type png)
+<use Images/cell_lines_1.PNG>
+Package pdftex.def Info: Images/cell_lines_1.PNG  used on input line 329.
 (pdftex.def)             Requested size: 216.81pt x 125.3383pt.
-<cell_lines_2.PNG, id=124, 424.58624pt x 253.94875pt>
-File: cell_lines_2.PNG Graphic file (type png)
-<use cell_lines_2.PNG>
-Package pdftex.def Info: cell_lines_2.PNG  used on input line 329.
+<Images/cell_lines_2.PNG, id=124, 424.58624pt x 253.94875pt>
+File: Images/cell_lines_2.PNG Graphic file (type png)
+<use Images/cell_lines_2.PNG>
+Package pdftex.def Info: Images/cell_lines_2.PNG  used on input line 329.
 (pdftex.def)             Requested size: 216.81pt x 129.67488pt.
- [13 <./cell_lines_1.PNG> <./cell_lines_2.PNG>]
-<trios.PNG, id=133, 530.48187pt x 395.4775pt>
-File: trios.PNG Graphic file (type png)
-<use trios.PNG>
-Package pdftex.def Info: trios.PNG  used on input line 343.
+ [13 <./Images/cell_lines_1.PNG> <./Images/cell_lines_2.PNG>]
+<Images/trios.PNG, id=133, 530.48187pt x 395.4775pt>
+File: Images/trios.PNG Graphic file (type png)
+<use Images/trios.PNG>
+Package pdftex.def Info: Images/trios.PNG  used on input line 343.
 (pdftex.def)             Requested size: 303.53267pt x 226.28745pt.
- [14 <./trios.PNG>] [15]
-<PCA.PNG, id=149, 532.99126pt x 398.99063pt>
-File: PCA.PNG Graphic file (type png)
-<use PCA.PNG>
-Package pdftex.def Info: PCA.PNG  used on input line 388.
+ [14 <./Images/trios.PNG>] [15]
+<Images/PCA.PNG, id=149, 532.99126pt x 398.99063pt>
+File: Images/PCA.PNG Graphic file (type png)
+<use Images/PCA.PNG>
+Package pdftex.def Info: Images/PCA.PNG  used on input line 388.
 (pdftex.def)             Requested size: 303.53267pt x 227.2261pt.
-<PCA_swiss.PNG, id=150, 524.45938pt x 395.97937pt>
-File: PCA_swiss.PNG Graphic file (type png)
-<use PCA_swiss.PNG>
-Package pdftex.def Info: PCA_swiss.PNG  used on input line 399.
+<Images/PCA_swiss.PNG, id=150, 524.45938pt x 395.97937pt>
+File: Images/PCA_swiss.PNG Graphic file (type png)
+<use Images/PCA_swiss.PNG>
+Package pdftex.def Info: Images/PCA_swiss.PNG  used on input line 399.
 (pdftex.def)             Requested size: 303.53267pt x 229.17879pt.
- [16 <./PCA.PNG>] [17 <./PCA_swiss.PNG>] (principal.aux)
+ [16 <./Images/PCA.PNG>] [17 <./Images/PCA_swiss.PNG>] (principal.aux)
 Package rerunfilecheck Info: File `principal.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22669 strings out of 478547
- 421853 string characters out of 2841835
+ 22670 strings out of 478547
+ 422364 string characters out of 2841835
  737401 words of memory out of 3000000
  40506 multiletter control sequences out of 15000+600000
  514447 words of font info for 69 fonts, out of 8000000 for 9000
