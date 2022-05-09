@@ -1,0 +1,411 @@
+---
+title: 'Hands on Lesson: SPIA Assay'
+author: "Elisa Bugani"
+date: "7/5/2022"
+output: html_document
+---
+
+```{r}
+rm(list=ls());verbose<-TRUE; options(max.print=1000);getOption("max.print")
+```
+
+To perform this set of tasks download the folder provided by Prof. Demichelis at:   
+https://www.dropbox.com/s/9ej32psjur4gzyv/HandsOn_SPIA.zip?dl=0
+
+This set of tasks is performed with the package 'SPIAssay', developed by Francesca Demichelis and Davide Prandi.   
+The SNP Panel Identification Assay (SPIA) is a package that enables an accurate determination of cell line identity from the genotype of single nucleotide polymorphisms (SNPs). The SPIA test allows to discern when two cell lines are close enough to be called similar and when they are not (for further information see the documentation file 'SPIAassay' present in the folder). 
+
+```{r}
+if(!require(SPIAssay)) install.packages("SPIAssay")
+library(SPIAssay)
+
+# Set working directory
+setwd("C:/Users/elisa/Desktop/UNIVERSITAS/Trento/Anno_1/Human_Genomics/2_HandsOn_SPIA/HandsOn_SPIA")
+
+```
+
+Set the parameters for the probabilistic test:
+```{r}
+spia_parameters <- list(Pmm = 0.1, nsigma = 2, Pmm_nonM = 0.6, nsigma_nonM = 3, PercValidCall=0.7)
+```
+
+Parameters:
+- _Pmm_: SNP probability of mismatch in a matching population
+- _nsigma_: area limit for Pmm
+- _Pmm_nonM_: SNP probability of mismatch in a non matching population 
+- _nsigma_nonM_: area limit for Pmm_nonM
+- _PercValidCall_: percentage of valid SNP calls to consider the test valid
+
+
+Load genotype data:
+```{r}
+# Assuming that the genome file is located in the current directory
+genotype_data <- read.table("SPIA_input_genotype.tsv", header = TRUE, sep = "\t", as.is = TRUE ); 
+
+dim(genotype_data)
+```
+
+```{r}
+head(genotype_data)
+```
+The genotype file contains an array of 2300 SNPs represented by their SNP identifier beginning with 'rs' (rows) and their relative calls in a set of 48 samples (columns). 
+Legend:
+SPIA uses 0 for AA, 1 for BB, 2 for AB and NA for NoCall.
+
+We load a list of 143 selected SNPs with high MAF, so matching the requirements for the genetic test:
+```{r}
+# Load high MAF SNPs unique IDs
+selected_snps <- read.delim("SPIA_selected_SNPs.txt", header = FALSE, sep = "\t", stringsAsFactors = FALSE)[,1]
+
+length(selected_snps);
+```
+
+```{r}
+head(selected_snps);
+```
+
+### TASK 1
+Observe genetic distances among n individuals using 143,
+100, 80, 60, 40, 20 high MAF SNPs. 
+
+Select genotype data based on SNP IDs:
+```{r}
+# Select only the rows with an ID matching the ones present in 'selected_snps' and all the columns related to those
+genotype_data_selected <- genotype_data[selected_snps,]
+
+dim(genotype_data_selected); 
+```
+Run the test using the function 'SPIATest' which computes the SPIA distance on a set of cell lines/samples and performs the associated probabilistic test.
+Here, the SPIATest is run on the previously selected genotype data with the parameters set at the beginning.
+```{r}
+SPIA_selected <-  SPIATest(x = genotype_data_selected, row.names = FALSE, test.param = spia_parameters) 
+
+```
+
+Visualize pairwise distances among all samples with the function SPIAPlot
+that creates a summary graph of the SPIA test. 
+With 48 samples, we will have a total number of combinations of: 48*47/2 = 1.128.
+```{r}
+SPIAPlot(SPIA_selected)
+```
+
+- The majority of the pairs were considered to be 'different' (red dots)
+- A few were marked as 'uncertain' (blue dots) meaning that, according to the parameters used, it was not possible to produce a certain call (similar or different)
+- Some pairs are represented in black since the percentage of available SNP calls was too low (< 0.7%) to consider the test valid (as set in the parameters at the beginning)
+Overall, we see an average distance of ~0.6 among all pairs.
+
+We can check output matrix 'SPIAresult' present in the object 'SPIA_selected' to see more detailed information for each pair.
+```{r}
+SPIA_selected
+head(SPIA_selected["SPIAresult"])
+```
+
+Look at distances histogram (column 3 of SPIAresult:
+```{r}
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+
+```
+
+Save output matrix:
+```{r}
+write.table(SPIA_selected["SPIAresult"], paste("output_","selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+
+```
+
+#### 100 SNPs
+We repeat the operation with 100 selected SNPs. The 100 SNPs are randomly sampled from the 143 high MAF SNPs using 'sample' function and their indexes are stored in the variable 'c100'.
+```{r}
+c100 <- sample(c(1:nrow(genotype_data_selected)), 100, replace = FALSE);
+```
+
+```{r}
+# run test again selecting the c100 SNPs from 'genotype_data_selected'
+SPIA_selected <-  SPIATest(x = genotype_data_selected[c100,], row.names = FALSE, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_selected)
+```
+
+With 100 SNPs the output looks quite similar to the previous one. The average distance is still ~0.6 but there seems to be a slight increase in the standard deviation.  
+The same thing will happen when decreasing more the number of selected SNPs.
+
+```{r}
+## check output matrix
+head(SPIA_selected["SPIAresult"])
+```
+```{r}
+## look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+```
+
+```{r}
+## save output matrix
+write.table(SPIA_selected["SPIAresult"], paste("output_", "100_", "selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+#### 80 SNPs
+
+```{r}
+# subsampling of 80 high MAF SNPs
+c80 <- sample(c(1:nrow(genotype_data_selected)), 80, replace = FALSE);
+```
+
+```{r}
+# run test again
+SPIA_selected <-  SPIATest(x = genotype_data_selected[c80,], row.names = FALSE, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_selected)
+```
+
+```{r}
+## check output matrix
+head(SPIA_selected["SPIAresult"]);
+```
+```{r}
+# look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+
+```
+
+```{r}
+## save output matrix
+write.table(SPIA_selected["SPIAresult"], paste("output_", "80_", "selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+#### 60 SNPs
+
+```{r}
+c60 <- sample(c(1:nrow(genotype_data_selected)), 60, replace = FALSE);
+```
+
+```{r}
+# run test again
+SPIA_selected <-  SPIATest(x = genotype_data_selected[c60,], row.names = FALSE, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_selected)
+```
+```{r}
+## check output matrix
+head(SPIA_selected["SPIAresult"]);
+```
+
+```{r}
+## look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+```
+
+```{r}
+## save output matrix
+write.table(SPIA_selected["SPIAresult"], paste("output_", "60_", "selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+
+#### 40 SNPs
+
+```{r}
+c40 <- sample(c(1:nrow(genotype_data_selected)), 40, replace = FALSE);
+```
+
+```{r}
+# run test again
+# SPIA_selected <-  SPIATest(x = genotype_data_selected[c40,], row.names = FALSE, test.param = spia_parameters) 
+
+# SPIAPlot(SPIA_selected)
+```
+Running the test with 40 or less SNPs might produce an error. This is due to the fact that SNPs are selected randomly and some combinations of them might not allow to perform the test. If so, run the test again.
+
+```{r include = FALSE}
+## check output matrix
+head(SPIA_selected["SPIAresult"]);
+```
+
+```{r}
+## look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+```
+
+```{r}
+## save output matrix
+write.table(SPIA_selected["SPIAresult"], paste("output_", "40_", "selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+
+#### 20 SNPs
+
+```{r}
+c20 <- sample(c(1:nrow(genotype_data_selected)), 20, replace = FALSE);
+```
+
+```{r}
+# run test again
+# SPIA_selected <-  SPIATest(x = genotype_data_selected[c20,], row.names = FALSE, test.param = spia_parameters) 
+
+# SPIAPlot(SPIA_selected)
+```
+
+```{r include = FALSE}
+## check output matrix
+head(SPIA_selected["SPIAresult"]);
+```
+
+```{r}
+## look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+```
+
+```{r}
+## save output matrix
+write.table(SPIA_selected["SPIAresult"], paste("output_", "20_", "selected",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+
+### TASK 2
+
+Observe genetic distances among m individuals using 100
+from unselected SNPs
+
+```{r}
+# before we see what happens using all SNPs
+SPIA_all <-  SPIATest(x = genotype_data, row.names = F, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_all)
+```
+Using all available SNPs leads to have many uncertain calls, a lower aberage distance (~0.2/0.3) and a lower standard deviation.
+
+```{r}
+# Now with 100 unselected SNPs
+c100 <- sample(c(1:nrow(genotype_data)), 100, replace = FALSE)
+
+genotype_data_random <- genotype_data[c100,]
+```
+
+```{r}
+# run test
+SPIA_random <-  SPIATest(x = genotype_data_random, row.names = F, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_random)
+```
+The average looks more centered around 0.3, way lower than the one found with 100 selected SNPs, and the standard deviation has increased. The majority of outputs are still 'uncertain' indicating that with unselected SNPs it is more difficult to perform accurate genetic testing. 
+
+```{r}
+hist(as.numeric(SPIA_random$SPIAresult[,3]), breaks = 100, xlim=c(0,1))
+```
+
+### TASK 3
+Observe genetic distances among samples that include j pairs (normal and tumor DNA).
+
+```{r}
+## load somatic data
+somatic_data <- read.table("SPIA_somatic_genotype.tsv", header = TRUE, sep = "\t", as.is = TRUE ); 
+
+dim(somatic_data); 
+```
+There are 334 SNPs for 7 samples. 
+
+```{r}
+head(somatic_data)
+```
+```{r}
+# SPIA test with all SNPs
+SPIA_somatic <-  SPIATest(x = somatic_data, row.names = F, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_somatic)
+```
+From the plot we see that:
+- Some pairs were marked as 'match' indicating that the two samples probably belong to the same individual.
+- Some others were marked as uncertain.
+- Whereas 10 pairs were marked as 'different', since their level of distance is compatible with the option of the samples coming from different individuals. 
+
+To understand which samples might represent tumor tissue one thing that we could do is to look at the output matrix:
+
+```{r}
+head(SPIA_somatic["SPIAresult"])
+```
+
+The output table indicates, for each pair, which type of mismatches were present. For example:
+- Diff_AvsB_or_BvsA: this column indicates the number of mismatches that came from having a AA o BB which becomes a BB o AA. Quite rare event, it's like a double mutation. 
+- DiffABvsAorB = this indicates loss of heterozigosity, since AB became AA or BB. 
+- Diff_AorBvsAB_or_vic
+
+By looking at this output one can try to understand if the mismatches are compatible with important genomic disorders, or many deletions causing loss of heterozygosity which are compatible with a tumor sample. 
+
+
+```{r}
+# save SPIAresult
+write.table(SPIA_somatic["SPIAresult"], paste("output_","somatic",".txt",sep=""), sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+
+
+### TASK 4
+
+Change confidence m in one of previous Tasks. 
+Set parameters for high MAF SNPs, exploring different values for Pmm, Pmm_nonM, nsigma, nsigma_nonM (one at the time). 
+```{r}
+# here we changed Pmm from 0.1 to 0.2
+spia_parameters <- list(Pmm = 0.2, nsigma = 2, Pmm_nonM = 0.6, nsigma_nonM = 3, PercValidCall=0.7)
+
+```
+
+Task 1 - 100 SNPs.
+
+```{r}
+c100 <- sample(c(1:nrow(genotype_data_selected)), 100, replace = FALSE);
+```
+
+```{r}
+# run test again selecting the c100 SNPs from 'genotype_data_selected'
+SPIA_selected <-  SPIATest(x = genotype_data_selected[c100,], row.names = FALSE, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_selected)
+```
+
+```{r}
+## check output matrix
+head(SPIA_selected["SPIAresult"])
+```
+
+```{r}
+## look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+```
+
+Task 1 - 80 SNPs.
+
+```{r}
+# subsampling of 80 high MAF SNPs
+c80 <- sample(c(1:nrow(genotype_data_selected)), 80, replace = FALSE);
+```
+
+```{r}
+# run test again
+SPIA_selected <-  SPIATest(x = genotype_data_selected[c80,], row.names = FALSE, test.param = spia_parameters) 
+
+SPIAPlot(SPIA_selected)
+```
+
+```{r}
+## check output matrix
+head(SPIA_selected["SPIAresult"]);
+```
+
+```{r}
+# look at distances histogram
+hist(as.numeric(SPIA_selected$SPIAresult[,3]), breaks = 100, xlim=c(0,1), xlab = "Distances", main = "Distance frequencies")
+
+```
+
+
+#### Additional:
+
+How MAF is computed for a SNP across x individuals for which you have a genotype?
+
+Example: 5 people
+Genotype: AA, AA, AB, AB, AA
+
+How to determine MAF?
+Denominator is the number of alleles, here 5*2 = 10.
+Minor allele (less represented) = B, represented 2 times. 
+
+MAF = minor allele / total alleles =  2 / 10 = 0.2 = 20% 
+
+By looking at the input table we can see that many SNPs have a very low MAF. whereas the table with the selected SNPs will contain SNPs with a higher MAF. 
