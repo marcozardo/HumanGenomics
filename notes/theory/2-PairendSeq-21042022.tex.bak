@@ -1,0 +1,37 @@
+\chapter{Interpreting Pair Orientation}
+READ PAIR INTERPRETATION
+generally the LR orientation, two reads facing each other, always work with ILLUMINA (ignore the other)
+
+
+elements to consider whtn using pair-end sequencing
+\begin{itemize}
+	\item pair ends relative orientation
+	\item instert size length 
+	\item coverage withing he aberrant region
+	\item coverage outside of the aberrant region
+	\item coverage at the break points
+\end{itemize}
+
+\end{itemize}
+
+- INVERSION
+A B inverted
+how to understand an inversion? two reads over the breakpoint B and A. The two pairs shown in the image are actuallly the most informative, but they are not the only reads done.
+local coverage in A and B become low, smaller depending on the number of copies. This is due o the fact that the region doesn't exist anymore.
+
+-- OUTPUT IMAGE
+inversion monoallelic, as coverage didn't totallly disappear.
+reads are not mapped, consequently the coverage dicrease. over the break point some reads could align 
+
+- TANDEM DUPLICATION
+the coverage on the external region is on average 
+on the extremes, the coverage is normal, on the middle region the coverage is multiplicated
+
+- INVERTED DUPLICATION
+similar to the case before
+tiny drop due to the lack of the sequence which is instead replaced by the inverted duplication.
+
+- DELETION
+drop of coverage related dto 
+observed distance of the two exteremes or looking to the coverage
+small deletions instead are better viewable by using single end reads.

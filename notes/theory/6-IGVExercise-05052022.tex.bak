@@ -1,0 +1,24 @@
+\chapter{ghghg}
+Paired-end reading, it is possible to understand if something strange happened to the sequence in the middle.
+INVERSION
+Drop in coverage on the sites of inversion
+... (other cases already seen)
+
+FIRST CASE chr1:11,043,245-11,061,901
+Green reads
+...
+
+Healthy cells likely don't have tandem duplication. With perfect presence of a tumor sample. In this case, 1 of the alleles didn't undergo duplication, so why it's less than the 50\% 
+Ploidy of cancer cells is an important characteristic
+Purity of the sample is the portion of the sample that is tumor. Need to correct for this percentages.
+
+SECOND CASE chr5:9,410,315-9,413,699
+No coverage
+Deletion on both the alleles, complete deletion of the portion
+
+THIRD CASE chr7:31,576,117-31,599,940
+No coverage in one part of the region
+Inversion and an Hemyzigous deletion, it's not easy to understand what happened before and what after.
+- 1st hypothesis: Inversiono first, Hemideletion second
+Basically you have an inversion between B and F, and after the deletion of the ED portion, the other allele remains normal.
+
