@@ -1,2 +1,2 @@
 # HumanGenomics
-Genomics course held by Demichelis Francesca 2021/2022
+Genomics course held by Demichelis Francesca 2021/2022.
