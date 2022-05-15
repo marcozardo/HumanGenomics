@@ -3,70 +3,40 @@
 \chapter*{IGV (Integrative Genomics Viewer)}
 
 \section*{Main characteristics}
-The human genome nowadays is being explored extensively thanks to the collection
-of exome and whole-genome sequencing, epigenetic surveys, expression profiling
-of coding and noncoding RNAs, single nucleotide polymorphism (SNP) and copy
-number profiling, and functional assays. Those findings are essential to pave the way for the future precision medicine. This is an approach
-for desease treatment and prevention that takes into account individual
-variability in genes, environemtn, and lifestyle for each person. The right
-drug, at the right time and at the right dose for each individual. 
+The human genome nowadays is being explored extensively thanks to of exons and
+whole-genome sequencing, epigenetic surveys, expression profiling of coding and
+noncoding RNAs, single nucleotide polymorphism (SNP) and copy number profiling,
+and functional assays. Those findings are essential to pave the way for the
+future \textbf{precision medicine}. This is an approach for desease treatment and
+prevention that takes into account individual variability in genes, environment,
+and lifestyle for each person. The right drug, at the right time and at the
+right dose for each individual. 
 
-\begin{figure}
-    \caption{All the important elements to navigate into IGV are reported in the figure}
+\begin{figure}[H]
+    \caption{All the important usages of IGV}
     \centering
     \includegraphics[width=0.6\textwidth]{usagesIGV.PNG}
-    \label{IGVsee}
+    \label{IGVusages}
 \end{figure}
 
-The IGV software is an high-performance lightweight visualization tool for interactive exploration
-of large, integrated genomic datasets. It supports a wide variety of data types,
-including next-generation sequence data, and genomic annotations.
-
-It allows to move, zoom in and out quickly over all genomic scales, and also to
-jump in precise positions of the sequence. BAM files, which are read by IGV,
-enable the retrieval of data for precise positions inside a chromosome. Pixel
-resolution errors, occuring when if data density exceeds the constraint given by
+The IGV software is an \textbf{high-performance lightweight visualization tool}
+for interactive exploration of large, integrated genomic datasets. It supports a
+\underline{wide variety of data types}, including next-generation sequence data,
+and genomic annotations. Data sets can be loaded from local or remote sources,
+including cloud-based resources. \\
+It allows to move, zoom in and out quickly over different genomic scales, and also to
+jump in precise positions of the sequence. It is possible to search for genomic coordinates or gene names. Pixel
+resolution errors, occuring when data density exceeds the constraint given by
 the number of pixels available for display, could be solved through data
 aggregation. As the user zooms below the ~50 kb range, individual aligned reads
 become visible. It is possible then to zoom further, and see the bases at each
-position
+position.
+ 
+Annotations for specific genomes could be found consulting the UCSC Table Browser \href{http://genome.ucsc.edu/cgi-bin/hgTables}{(UCSC table)}.
 
-Data sets can be loaded from local or remote sources, including cloud-based
-resources. 
-
-Other information are present at
+Other information are present in the
 \href{https://authors.library.caltech.edu/72234/2/nbt.1754-S1.pdf}{Supplementaty
-information - Integrative Genomics Viewer} pdf file
-
-\begin{figure}
-    \caption{All the important elements to navigate into IGV are reported in the figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{IGVview.PNG}
-    \label{IGVsee}
-\end{figure}
-\begin{figure}
-    \caption{}
-    \centering
-    \includegraphics[width=0.6\textwidth]{Tiles.PNG}
-    \label{Til}
-\end{figure}l 
-
-\begin{figure}
-    \caption{}
-    \centering
-    \includegraphics[width=0.6\textwidth]{TileView.PNG}
-    \label{img: TileV}
-\end{figure}
-
-For each resolution scale (“zoom level”), the aggregated data is divided into
-tiles that correspond to a region viewable on a typical user display \ref{TileV}. 
-
-% \begin{figure}[h]
-% \caption{in correspondance to SNP lower coverage}
-% \centering
-% \includegraphics[width=0.6\textwidth]{example}
-% \label{}
-% \end{figure}
+information - Integrative Genomics Viewer} pdf file.
 
 %#TODO For each resolution scale (“zoom level”), the aggregated data is divided into
 %tiles that correspond to a region viewable on a typical user display. Each tile
@@ -84,61 +54,119 @@ tiles that correspond to a region viewable on a typical user display \ref{TileV}
 %is similar to that of Google Maps, allowing the user to zoom and pan seamlessly
 %across the genome at any level of detail from whole genome to base pair.
 
-\begin{figure}
+\begin{figure}[H]
+    \caption{All the important elements to navigate into IGV are reported in the figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{IGVview.PNG}
+    \label{IGVnavigation}
+\end{figure}
+\begin{figure}[H]
+    \caption{}
+    \centering
+    \includegraphics[width=0.6\textwidth]{Tiles.PNG}
+    \label{Til}
+\end{figure}
+\begin{figure}[H]
+    \caption{}
+    \centering
+    \includegraphics[width=0.6\textwidth]{TileView.PNG}
+    \label{img: TileV}
+\end{figure}
+\begin{figure}[H]
     \caption{}
     \centering
     \includegraphics[width=0.6\textwidth]{IGVReadsView.PNG}
     \label{ViewReads}
 \end{figure} 
 
+
+\subsection*{igvtools}
+Igvtools comprises a set of utilities for preparing large files for efficient display.
+
+\begin{figure}[H]
+    \caption{igvtools possible operations, the "count" function allows to generate coverage data, and it takes in input a BAM file. The obtained data could be then loaded with the "Load pre-computed coverage data" commandq}
+    \centering
+    \includegraphics[width=0.6\textwidth]{igvtools.PNG}
+\end{figure}
+
 \subsection*{Session Files}
 Sessions are an integral part of IGV, allowing users to share their data and
 views with other users simply and accurately. Session files describe the session
 in XML.
 
-\begin{figure}
-    \caption{}
+\begin{figure}[H]
+    \caption{Structure of the XML file}
     \centering
-    \includegraphics[width=0.6\textwidth]{structureXMLfile.PNG}
+    \includegraphics[width=0.75\textwidth]{structureXMLfile.PNG}
     \label{XMLfile}
 \end{figure} 
 
-\subsection*{Exercise}
 
 
-EXERCISE
-Reference genome in fasta file, annotations, and indexed
-It is possible to see the single bases
+\section*{Some of the main utilizations}
+\textit{(I will not write down all the passages needed to obtain the figures represented
+below, as they are included in the exercise file delivered by the professor)}
 
-- SNP1
-heterozygous SNP
+\subsection*{RNA-seq alignments}
 
-- SNP2
-lower coverage
-all the cytosines are on the reverse strand, could be associated to tachnical issues
+\begin{figure}[H]
+    \caption{the height depends on the quantity of reads connecting the different exons.}
+    \centering
+    \includegraphics[width=0.6\textwidth]{RNAseqAlign.PNG}
+\end{figure}
 
-% ----------------------
+\begin{figure}[H]
+    \caption{\textbf{Sashami plots}: The number of reads connecting exosomes are
+    represented here on the curved lines. The peaks represent coverage within
+    exons.}
+    \centering
+    \includegraphics[width=0.6\textwidth]{sashamiplot.PNG}
+\end{figure}
 
-Paired-end reading, it is possible to understand if something strange happened to the sequence in the middle.
-INVERSION
-Drop in coverage on the sites of inversion
-... (other cases already seen)
+\subsection*{Study of variants}
+It is possible to study variants from different samples.
 
-FIRST CASE chr1:11,043,245-11,061,901
-Green reads
-...
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{variantsView.PNG}
+\end{figure}
 
-Healthy cells likely don't have tandem duplication. With perfect presence of a tumor sample. In this case, 1 of the alleles didn't undergo duplication, so why it's less than the 50\% 
-Ploidy of cancer cells is an important characteristic
-Purity of the sample is the portion of the sample that is tumor. Need to correct for this percentages.
+It is also possible to sort the samples in different ways and to group them considering different characteristics.
 
-SECOND CASE chr5:9,410,315-9,413,699
-No coverage
-Deletion on both the alleles, complete deletion of the portion
 
-THIRD CASE chr7:31,576,117-31,599,940
-No coverage in one part of the region
-Inversion and an Hemyzigous deletion, it's not easy to understand what happened before and what after.
-- 1st hypothesis: Inversiono first, Hemideletion second
-Basically you have an inversion between B and F, and after the deletion of the ED portion, the other allele remains normal.
+
+\section*{Exercise}
+
+The goal was to read pairs/end order/coverage/insert sizes at following
+coordinates (hg19). Interpret, if possible, as inversion, inverted duplication,
+tandem duplication, or deletion.
+
+\begin{figure}[H]
+    \caption{\textit{\textbf{chr1:11,050,009-11,055,137}}: It could be a tandem duplication on one of the two alleles and a deletion on the other allele. The reason why I would suggest the presence of a deletion is due to the fact that the coverage remains quite constant, despite of the duplication.}
+    \centering
+    \includegraphics[width=0.6\textwidth]{pos1.PNG}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{\textbf{\textit{chr5:9,410,315-9,413,699}}: it is quite clear that both the alleles were deleted in that region, because of the decrease in coverage}
+    \centering
+    \includegraphics[width=0.55\textwidth]{pos2.PNG}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}[t]{0.55\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{cov3.PNG}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.55\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{pos3.PNG}
+    \end{subfigure}
+    \caption{\textit{\textbf{chr7:31,576,117-31,599,940}}: Basically you have an inversion between B and F, and after the deletion of the ED portion, the other allele remains normal.}
+    \label{fig:3}
+\end{figure}
+
+%#TODO complete all the figures of the exercise
 
