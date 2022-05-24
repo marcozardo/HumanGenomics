@@ -1,5 +1,5 @@
 \graphicspath{{chapters/GeneticFingImages/}}
-\chapter*{Genetic Figerprinting}
+\chapter{Genetic Figerprinting}
 
 Genetic fingerprinting is a tecnique used to identify some characteristics of a genome (a pattern of variable elements), like SNPs or minisatellites, in order to uniquely characterize a genome. Genetic fingerprinting can be used to compare a genome with a reference sample or to compare different genomes between each other, in order to determine their diversity or analogy. 
 
@@ -12,7 +12,7 @@ DNA fingerprinting is applied in different fields:
 \end{itemize}
 
 
-\subsection*{Variants used for genetic testing}
+\subsection{Variants used for genetic testing}
 
 There are different variants that can be used for genetic fingerprinting, such as Single Nucleotide Polimorfisms (SNPs) or inherited Copy Number Variations (CNVs).
 SNPs are substitutions of a single nucleotide at a specific position in the genome, whereas copy number variation is a phenomenon in which sections of the genome are repeated and the number of repeats in the genome varies between individuals.
@@ -20,9 +20,9 @@ Basically everything that is inherited and that is a polimorphism can be used in
 
 SNPs are the most amenable ones since they are simple, abundant in the genome and easy to detect in sequencing data at any coverage depth. For these reasons, in this lesson we will focus on the development of SNP-based genetic tests.
 
-\section*{SNPs features}
+\section{SNPs features}
 
-\subsection*{Hardy-Weinberg equilibrium and Minor Allele frequency}
+\subsection{Hardy-Weinberg equilibrium and Minor Allele frequency}
 
 One property of SNPs which has to be taken into account when using SNPs for genetic testing is the \textbf{Hardy-Weinberg equilibrium}. 
 In population genetics, the Hardy-Weinberg equilibrium states that allele and genotype frequencies in a population will remain constant from generation to generation under neutral selection, so in the absence of other evolutionary influences, like genetic drift, mate choice, sexual selection, mutation and so on.
@@ -30,7 +30,7 @@ In population genetics, the Hardy-Weinberg equilibrium states that allele and ge
 In the simplest case of a single locus with two alleles denoted \emph{A} and \emph{a} with frequencies f (A) = p and f (a) = q, respectively, the expected genotype frequencies under random mating are f (AA) = $p^{2}$ for the AA homozygotes, f (aa) = $q^{2}$ for the aa homozygotes, and f (Aa) = 2pq for the heterozygotes. In the absence of selection, allele frequencies p and q are constant between generations, so equilibrium is reached.
 SNPs that respect this equilibrium are also the most studied, thus more informative. 
 
-\subsection*{Minor Allele Frequency}
+\subsection{Minor Allele Frequency}
 
 Also, when performing genetic fingerprinting, the aim is to maximize the probability to have different genotypes in unrelated individuals. 
 For this reason, the more advantageous SNPs will be the ones in which the allelic frequency of the variants is the higher possible. Highest variability in the population allows to distinguish better more individuals. 
@@ -50,7 +50,7 @@ Some useful projects:
 	\url{https://www.sanger.ac.uk/resources/downloads/human/hapmap3.html}
 \end{itemize}
 
-\subsection*{Haplotype Blocks}
+\subsection{Haplotype Blocks}
 
 Another important feature to consider for SNPs selection are \textbf{Haplotype blocks}. Haplotype blocks are blocks along the genome that tend to be inherited as segments. In these sizable regions there is little evidence for historical recombination and only a few common haplotypes are observed. 
 
@@ -71,7 +71,7 @@ The colors indicate the strenght of pairwise linkage disequilibrium (LD) accordi
 Tag SNPs are shadowed in pink. A Tag SNP is representative of a region with high linkage disequilibrium and represents a group of SNPs (called haplotype).
 
 
-\subsection*{Other SNPs features} 
+\subsection{Other SNPs features} 
 \begin{itemize}
 	\item Choose SNPs that are in areas that are not likely to undergo somatic aberrations. So exclude chromosomal locations which undergo frequent somatic aberrations. Eg. areas commonly deleted in tumor will produce LOH but probably also no calls, since there is no DNA. 
 	\item Choose SNPs equally represented/spread all around the genome (not in specific chromosome regions).
@@ -82,19 +82,19 @@ Tag SNPs are shadowed in pink. A Tag SNP is representative of a region with high
 \end{itemize}
 
 
-\subsection*{Number of SNPs to select} 
+\subsection{Number of SNPs to select} 
 
 If we want to build a test to run genetic fingerprinting using SNPs, \textbf{how many polymorphic loci (SNPs) should be tested?} 
 We want to make sure that the measure of the test will be able to differentiate unrelated individuals. 
 But we must also remember that many variables must be taken into account, possible mismatches in particular. Those can be due to the sequencing process itself (experimental mismatches) but also to changes due to somatic events (biological mismatches). All these events can be used in the test with a different weight, based on how likely they are. 
 
 
-\subsubsection*{Experimental mismatches : Genotype call error rate}
+\subsubsection{Experimental mismatches : Genotype call error rate}
 
 During sequencing, each machine will produce some errors, resulting in some loci for which no data will be available. If those loci include some SNPs of interest, then no call will be associated to that SNP. 
 Experimental mismatches are related to the error rate of the technology used, they are platform dependent. 
 
-\paragraph*{Some exaples:}
+\paragraph{Some examples:}
 
 \begin{figure}
 	\centering
@@ -119,7 +119,7 @@ Different examples produced different levels of concordance. What do we trust th
 
 The first set of SNPs is the one that we trust the most, because it has the higher number of available SNPs. Wider number of SNPs provides the most reliable information. 
 
-\subsubsection*{Biological mismatches}
+\subsubsection{Biological mismatches}
 
 In the context of desease samples and tumors, many somatic events can happen, like deletions, gains of copies, homozygus deletions, ecc. Some common ones are:
 \begin{itemize}
@@ -138,7 +138,7 @@ The main point is that all mismatches must be taken into consideration.
 For this, all implemented tests use \emph{more than the minimal number of SNPs} that allow to identify individuals. 
 
 
-\section*{Genetic Distance}
+\section{Genetic Distance}
 
 Having defined the number of SNPs to use, with maximum MAF and other amanable characteristics, the genetic test should provide a measure of some sort, which will be the output metric, associated with a probability of the measure to be correct. 
 
@@ -169,7 +169,7 @@ If we put that into an equation will have that: for each position i (SNP) bwteee
 \bigskip
 This other example at figure \ref{fig:Distance2} shows the distance, measured by genetic fingerprinting, of a collection of 160 samples of cell lines. 
 
-The number of possible pairs corresponds to: 160 * 159 / 2 (number found in the x-axis). 
+The number of possible pairs corresponds to: 160  159 / 2 (number found in the x-axis). 
 
 By applying this measure to a larger collection of samples like this one, with many SNPs, we expect to find an \textbf{average distance} among all possible pairs that very unlikely will be close to 1. 
 The MAF of the SNPs is 0.5 but it will never happen that, with a high number of SNPs, the discordance will be 1. We will have an average distance that in this case around 0.5, since by chance we all share some genotypes on a large number of SNPs. 
@@ -194,7 +194,7 @@ Here, what happened is that one man who donated tissue by this program was seque
 
 The power of this tecnique is very high, it allows also to identify and remove things that we don't want in our study. Eg. if running a study (like a GWAS study) on a certain interesting geopraphic area, we will want to remove the members of the same family because that would skew the results. Genetic fingerprint can be used for this purpose.
 
-\subsection*{Some questions}
+\subsection{Some questions}
 
 \textbf{Q1}: Would the average of unrelated samples distance increase or decrease after selection of ideal SNPs?
 
@@ -204,7 +204,7 @@ If we maximize the likelihood that SNPs have a different genotype among individu
 
 We get distance 1 only if we are looking at too few viable SNPs. Whereas with a well selected pool of SNPs, and a high enough number of SNPs, it is very unlikely that the distance is equal to 1.
 
-\subsection*{Further considerations}
+\subsection{Further considerations}
 How does the genetic distance among different samples change when varying the number of selected SNPs used to perform the test?
 
 % immagine slide 26
@@ -222,7 +222,7 @@ Decreasing the number of SNPs to 60, then to 40 and 20 leads to have the same av
 In reality we always need enough SNPs, enough information, in order to prevent unexpected issues and to be sure that for any pairs of sample we have enough information to trust our measure. 
 
 
-\section*{Building a SNP-based genetic test}
+\section{Building a SNP-based genetic test}
 
 Building an identity test base on SNPs is a MULTI-STEP process, consisting in: 
 \begin{enumerate}
@@ -240,7 +240,7 @@ Building an identity test base on SNPs is a MULTI-STEP process, consisting in:
 We have already seen some of the steps needed (1, 2, 3), we now pass to the following ones.
 
 
-\subsection*{Implementation of a probabilistic test} 
+\subsection{Implementation of a probabilistic test} 
 
 Other important questions which we have to answer to when designing a genetic test are:
 \begin{itemize}
@@ -256,7 +256,7 @@ Under the assumption that SNP calls at different loci are independent, we can th
 
 With n, np and np(1-p) large enough, we can use the Gaussian approximation of the Binomial distribution with $K_{mean}$ = np and sd = np(1-p). 
 
-With somtehing that simple we can add a probabilistic test in our assay, defining an area of conficence given by $K_{mean} \pm m * sd$ where m is the number of standard deviations used to define the thresholds which will lead to have a smaller or wider confidence area. 
+With somtehing that simple we can add a probabilistic test in our assay, defining an area of conficence given by $K_{mean} \pm m  sd$ where m is the number of standard deviations used to define the thresholds which will lead to have a smaller or wider confidence area. 
 
 %immagine slide 33
 \begin{figure}
@@ -286,7 +286,7 @@ By decreasing the number of SNPs, the grey zone will become more tiny, making th
 By contrast, with more SNPs the area will be wider and easier to interpret. Hence using a number of SNPs greater than the minimum number is better, otherwise there will be many uncertain calls. 
 
 
-\section*{Further considerations and examples}
+\section{Further considerations and examples}
 %sistemare
 In the past, before sequencing area and SNPs array area, short tandem repeats were commonly used for genetic fingerprint. They were used on gels to distinguish related and unrelated individuals, eg, for the initial paternity test. 
 
@@ -295,7 +295,7 @@ In the past, before sequencing area and SNPs array area, short tandem repeats we
 If we think about gain of CNV then it becomes messy, because when combining multiple copies and have a add up we cannot distinguish what comes from what pair, so we cannot use them to identify an individual.
 
 
-\subsection*{Example 1: Cell line passages}
+\subsection{Example 1: Cell line passages}
 
 A mass use of these genetic tests is done to assess genetic changes in in-vitro cultivation (also, in studies in tumor evolution, lineage plasticity, etherogenity across metastasis across individuals or a single tumor).
 Cell lines go through multiple passages in which they are used and stored. Genetic fingerprinting can be used to assess if among different passages the cells have remained the same, if they were mislabeled or if major genetic drifts happened.
@@ -318,7 +318,7 @@ By contrast, by using a set on only 54 SNPs, this diversity is not detectable, i
 In order to understand this increase of distance, they looked at each chromosome to see if there were problems that justified increase the increased distance expected to be equal to zero in that cell line. All chromosome were tried. If we focus only on the SNPs spread across Chromosome 11, we observe that there is a major difference for certain passages with respect to the initial ones, only for one cell line (N15C6). This was due to the way the cells were immortalized (insertion in chromosome 11).
 
 
-\subsection*{Individual's Relatedness (genotype-distance)}
+\subsection{Individual's Relatedness (genotype-distance)}
 
 The HapMap consortium sequenced hundreds of individuals for different ethnicities and also used trios. Trio sequencing is a technique which involves the sequencing of the genome of mother, father and son/daughter. Trios provide major information for haplotype blocks, for identifying regions related to inheritance, ecc. 
 
@@ -329,14 +329,14 @@ The HapMap consortium sequenced hundreds of individuals for different ethnicitie
 	\caption{\label{fig: trios}}
 \end{figure}
 
-By looking at the data based on SPIA Assay (a genotype base assay which measures distance) at figure \ref*{fig: trios} we see that self-self pairs have distance zero, as expected; samples within each ethnicity have a certain average distance, which is lower that the distance observed among different ethnicities. Differences in distance among mixed samples are due to the fact that the SNPs used had on average higher MAF in some populations than in others. We also notice that in trios the distance is not 0 and is not equal to the median distance of unrelated individuals. This can be used for paternity tests or even in forensic science.
+By looking at the data based on SPIA Assay (a genotype base assay which measures distance) at figure \ref{fig: trios} we see that self-self pairs have distance zero, as expected; samples within each ethnicity have a certain average distance, which is lower that the distance observed among different ethnicities. Differences in distance among mixed samples are due to the fact that the SNPs used had on average higher MAF in some populations than in others. We also notice that in trios the distance is not 0 and is not equal to the median distance of unrelated individuals. This can be used for paternity tests or even in forensic science.
 
-\subsection*{Example 3: Cancer supscettibility test}
+\subsection{Example 3: Cancer supscettibility test}
 The data showed refers to a study were they were looking for polimorphisms that increase the likelihood of prostate cancer. In these studies, if relatives are present in the cohort, only one of them is taken to avoid skewing the results. 
 When looking for signs of cancer susceptibility by performing genetic fingerprinting, the division based on the degree of relativeness was determined 'for free' and could be used to remove unwanted samples from the cohort.
 
 
-\subsection*{Genetic structure of the human population}
+\subsection{Genetic structure of the human population}
 
 One relevant aspect of the human genome is that it contains everything needed to learn about the genetic structure of the human population. 
 
@@ -361,11 +361,11 @@ The easiest mathematical approach to assess how well SNPs can distinguish ethnic
 How accuratley can one predict an individuals geographic-ethnical background based upon his/her geentic barcode?
 
 % study seen in the slides
-\subsubsection*{Example paper: 'Genes mirror geography within Europe'}
+\subsubsection{Example paper: 'Genes mirror geography within Europe'}
 
 In the \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/}{study seen during lectures} they used a 500.000 (500k) single nucleotide polymorphism array. Information about the country of origin of grandparents, parents and other relatives was used to determine the geographical location that best represents each individual ancestry. 
 They run a combined study where they used a supervised search to find the best SNPs to make inference and then they tested it on another set of individuals. 
-By using high confidence data (individuals with high confidence origin data) and by using the genotypes of highly informative SNPs for specific region-related inheritance, they were able to rebuild the map of some of the countries in Europe \ref*{fig:PCA_countries}. 
+By using high confidence data (individuals with high confidence origin data) and by using the genotypes of highly informative SNPs for specific region-related inheritance, they were able to rebuild the map of some of the countries in Europe \ref{fig:PCA_countries}. 
 
 % immagine paper 
 \begin{figure}
@@ -385,10 +385,10 @@ Clusters that are a bit more dense and distant from the others (like the Spain/P
 	\caption{\label{fig: PCA_swiss}}
 \end{figure}
 
-Focusing on Switzerland, they could even make inference on the linguistic canton \ref*{fig: PCA_swiss}. Again this is a bit of a push, but it is possibly true that in country where some regions have very different habits (e.g. marriage within the same area) might lead to have similar genetic fingerprint. 
+Focusing on Switzerland, they could even make inference on the linguistic canton \ref{fig: PCA_swiss}. Again this is a bit of a push, but it is possibly true that in country where some regions have very different habits (e.g. marriage within the same area) might lead to have similar genetic fingerprint. 
 
 
-\subsubsection*{Summary and notes}
+\subsubsection{Summary and notes}
 Low-frequency alleles tend to be the result of a recent mutation and are expected to geographically cluster around the location at which the mutation first arose. Hence, they can be highly informative about the fine-scale population structure.
 
 Despite low average levels of genetic differentiation among Europeans, close correspondence between genetic and geographic distances was
@@ -398,5 +398,5 @@ associations can arise if genetic structure is not properly accounted for.
 
 
 % Posso aggiungere il Markdown alla repository GitHub?
-\subsection*{SPIA Assay}
+\subsection{SPIA Assay}
 In a hand on lesson we performed ourselves a SNP-based genetic distance test using the R package 'SPIAssay'. You can find an R Markdown of that lesson in the folder 'Additional material'. 

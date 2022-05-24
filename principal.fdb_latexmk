@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1652609463 "c:/Users/Maurizio/Desktop/HumanGenomics/principal.tex" "principal.pdf" "principal" 1652609469
+["pdflatex"] 1652611486 "c:/Users/Maurizio/Desktop/HumanGenomics/principal.tex" "principal.pdf" "principal" 1652611492
   "C:/Users/Maurizio/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1652534729 121580 f9c130120edf967b37b7411df92fd14b ""
   "C:/Users/Maurizio/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk" 1648332594 20028 764d5c4877d6a1a56ce8013c82b6e692 ""
   "C:/Users/Maurizio/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1652530323 10252492 3268900c0b45b1325c889cca78d25ae9 ""
@@ -153,8 +153,8 @@
   "chapters/GeneticFingImages//cell_lines_1.PNG" 1652440074 29213 6c457367841ff10a39f0130d781edcdb ""
   "chapters/GeneticFingImages//cell_lines_2.PNG" 1652440074 29180 8978cb59b1a479033d08105c444b298f ""
   "chapters/GeneticFingImages//trios.PNG" 1652440074 68409 3021bd135d1d29ffe6730895183efb18 ""
-  "chapters/Genetic_Fingerprinting.tex" 1652535406 32788 b7a40ef80ea3387b7a7cb998274d8c67 ""
-  "chapters/IGV.tex" 1652609459 7333 0f1070dc54b2bbda9ac1fce7c5e84df2 ""
+  "chapters/Genetic_Fingerprinting.tex" 1652610580 32760 93be653e6ebb1a9dabac60aef65780c1 ""
+  "chapters/IGV.tex" 1652611482 7474 c689a577dc549b9c77ebd0634a407cc2 ""
   "chapters/IGVimages//IGVReadsView.PNG" 1652541746 523982 f32173386b0dc1da10a15e60c9ab38bd ""
   "chapters/IGVimages//IGVview.PNG" 1652537851 321086 2bb7ff74533fb7ab3d241cdc82563cc1 ""
   "chapters/IGVimages//RNAseqAlign.PNG" 1652605622 32391 61639edce42beecceeced3dc4c1cb563 ""
@@ -165,15 +165,16 @@
   "chapters/IGVimages//pos1.PNG" 1652604530 42627 c8dd98e00a37f9182bf45948c4936c98 ""
   "chapters/IGVimages//pos2.PNG" 1652604599 14756 cf97e29aef0a03f3456aacf59447146e ""
   "chapters/IGVimages//pos3.PNG" 1652604695 46166 668e9d8a60ea57a3ad9cb78d25c603f1 ""
+  "chapters/IGVimages//pos3passages.jpg" 1652611364 214817 19e33778d437f69523f479593bfaed77 ""
   "chapters/IGVimages//sashamiplot.PNG" 1652605725 47627 2c5dffe271dfd3410a7240fc6afa4386 ""
   "chapters/IGVimages//structureXMLfile.PNG" 1652542103 861871 ea9391cbf5d633b25534ceabc8881b8b ""
   "chapters/IGVimages//usagesIGV.PNG" 1652542352 267847 e5756cc95460e39f30c9eb74c250579b ""
   "chapters/IGVimages//variantsView.PNG" 1652606482 144786 a8af125fbc91e74e8670c0e6f2623b78 ""
   "prefix.tex" 1652535223 2110 b7814d71b53308ef4ab7df6bf05081d0 ""
-  "principal.aux" 1652609469 6831 99d074a8a91a054adb7f17beec41fecb "pdflatex"
-  "principal.out" 0 -1 0 "pdflatex"
+  "principal.aux" 1652611492 11449 a5eac4a7587b70f6c08923a9718ddfb4 "pdflatex"
+  "principal.out" 1652611492 5111 8df7d9881303a1dd0691a7ec15dfd044 "pdflatex"
   "principal.tex" 1652607684 776 05db94aacccbfe16598bc6ae60e6aeae ""
-  "principal.toc" 1652609469 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
+  "principal.toc" 1652611492 3055 52b9f44094102826dba265522627bf73 "pdflatex"
   (generated)
   "principal.aux"
   "principal.log"

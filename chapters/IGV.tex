@@ -1,8 +1,8 @@
 \graphicspath{{chapters/IGVimages/}}
 
-\chapter*{IGV (Integrative Genomics Viewer)}
+\chapter{IGV (Integrative Genomics Viewer)}
 
-\section*{Main characteristics}
+\section{Main characteristics}
 The human genome nowadays is being explored extensively thanks to of exons and
 whole-genome sequencing, epigenetic surveys, expression profiling of coding and
 noncoding RNAs, single nucleotide polymorphism (SNP) and copy number profiling,
@@ -80,7 +80,7 @@ information - Integrative Genomics Viewer} pdf file.
 \end{figure} 
 
 
-\subsection*{igvtools}
+\subsection{Igvtools}
 Igvtools comprises a set of utilities for preparing large files for efficient display.
 
 \begin{figure}[H]
@@ -89,7 +89,7 @@ Igvtools comprises a set of utilities for preparing large files for efficient di
     \includegraphics[width=0.6\textwidth]{igvtools.PNG}
 \end{figure}
 
-\subsection*{Session Files}
+\subsection{Session Files}
 Sessions are an integral part of IGV, allowing users to share their data and
 views with other users simply and accurately. Session files describe the session
 in XML.
@@ -103,11 +103,11 @@ in XML.
 
 
 
-\section*{Some of the main utilizations}
+\section{Some of the main utilizations}
 \textit{(I will not write down all the passages needed to obtain the figures represented
 below, as they are included in the exercise file delivered by the professor)}
 
-\subsection*{RNA-seq alignments}
+\subsection{RNA-seq alignments}
 
 \begin{figure}[H]
     \caption{the height depends on the quantity of reads connecting the different exons.}
@@ -123,7 +123,7 @@ below, as they are included in the exercise file delivered by the professor)}
     \includegraphics[width=0.6\textwidth]{sashamiplot.PNG}
 \end{figure}
 
-\subsection*{Study of variants}
+\subsection{Study of variants}
 It is possible to study variants from different samples.
 
 \begin{figure}[H]
@@ -135,7 +135,7 @@ It is also possible to sort the samples in different ways and to group them cons
 
 
 
-\section*{Exercise}
+\section{Exercise}
 
 The goal was to read pairs/end order/coverage/insert sizes at following
 coordinates (hg19). Interpret, if possible, as inversion, inverted duplication,
@@ -155,18 +155,23 @@ tandem duplication, or deletion.
 
 \begin{figure}[H]
     \centering
-    
-    \begin{subfigure}[t]{0.55\textwidth}
+    \begin{subfigure}[t]{0.6\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{cov3.PNG}
     \end{subfigure}
-    \begin{subfigure}[t]{0.55\textwidth}
+    \begin{subfigure}[t]{0.6\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{pos3.PNG}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.6\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{pos3passages.jpg}
     \end{subfigure}
     \caption{\textit{\textbf{chr7:31,576,117-31,599,940}}: Basically you have an inversion between B and F, and after the deletion of the ED portion, the other allele remains normal.}
     \label{fig:3}
 \end{figure}
 
 %#TODO complete all the figures of the exercise
+%#TODO it could be a good idea to expand this part with some information. Let me know.
 

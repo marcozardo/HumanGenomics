@@ -1,1 +1,33 @@
 \babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Genetic Figerprinting}{2}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Variants used for genetic testing}{2}{subsection.1.0.1}%
+\contentsline {section}{\numberline {1.1}SNPs features}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Hardy-Weinberg equilibrium and Minor Allele frequency}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Minor Allele Frequency}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Haplotype Blocks}{3}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Other SNPs features}{4}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Number of SNPs to select}{5}{subsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.5.1}Experimental mismatches : Genotype call error rate}{5}{subsubsection.1.1.5.1}%
+\contentsline {paragraph}{\numberline {1.1.5.1.1}Some examples:}{5}{figure.caption.3}%
+\contentsline {subsubsection}{\numberline {1.1.5.2}Biological mismatches}{6}{subsubsection.1.1.5.2}%
+\contentsline {section}{\numberline {1.2}Genetic Distance}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Some questions}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Further considerations}{9}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Building a SNP-based genetic test}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Implementation of a probabilistic test}{11}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Further considerations and examples}{12}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Example 1: Cell line passages}{12}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Individual's Relatedness (genotype-distance)}{13}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Example 3: Cancer supscettibility test}{14}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Genetic structure of the human population}{14}{subsection.1.4.4}%
+\contentsline {subsubsection}{\numberline {1.4.4.1}Example paper: 'Genes mirror geography within Europe'}{15}{subsubsection.1.4.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.4.2}Summary and notes}{16}{subsubsection.1.4.4.2}%
+\contentsline {subsection}{\numberline {1.4.5}SPIA Assay}{16}{subsection.1.4.5}%
+\contentsline {chapter}{\numberline {2}IGV (Integrative Genomics Viewer)}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Main characteristics}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Igvtools}{20}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Session Files}{21}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Some of the main utilizations}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}RNA-seq alignments}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Study of variants}{22}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Exercise}{22}{section.2.3}%
